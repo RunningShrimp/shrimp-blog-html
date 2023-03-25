@@ -8,14 +8,14 @@ html,body{
 
 #container{
     display: flex;
-    flex-direction: row; /* 主轴方向为横向 */
+    flex-direction: column; /* 主轴方向为横向 */
     justify-content: center; /* 沿主轴居中对齐 */
     align-items: center; /* 沿交叉轴居中对齐 */
     padding: 5px 0 0;
 }
 .row {
     display: flex;
-    justify-content: center;
+    justify-content: center; /*设置 Flex 容器中 Flex 项在主轴方向（水平方向）上的对齐方式的属性。*/
 }
 
 body{
@@ -58,3 +58,11 @@ body{
     flex-basis: calc(25% - 10px);
     margin-right: calc(50% - 10px);
 }
+
+/* 清除列之后的浮动 */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+

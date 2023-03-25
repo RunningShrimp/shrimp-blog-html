@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <title>主页</title>
     <link rel="stylesheet" type="text/css" href="css/global.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <script type="text/javascript" src="js/global.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body id="container">
 
 <div class="navbar row">
+    <!--    导航栏-->
     <div class="bar-links ">
-        <div class="title" >
+        <div class="title">
             虾米小站
         </div>
         <div class="links">主页</div>
@@ -23,5 +25,108 @@
         <div class="links">留言板</div>
     </div>
 </div>
+<div class="banner">
+    <img class="avatar" src="assets/avatar.jpeg" alt=""/>
+    <div class="banner-line">
+        路漫漫其修远兮,吾将上下而求索
+    </div>
+</div>
+
+<div class="row">
+    <div class="leftcolumn">
+        <div class="card">
+            <h2>TITLE HEADING</h2>
+            <h5>Title description, Dec 7, 2017</h5>
+            <div class="fakeimg" style="height:200px;">Image</div>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco.</p>
+        </div>
+        <div class="card">
+            <h2>TITLE HEADING</h2>
+            <h5>Title description, Sep 2, 2017</h5>
+            <div class="fakeimg" style="height:200px;">Image</div>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                ullamco.</p>
+        </div>
+    </div>
+    <div class="rightcolumn">
+        <div class="card ">
+            <h2>标签云</h2>
+            <div id="tag-cloud">
+<!--                <a href="#">HTML</a>-->
+<!--                <a href="#">CSS</a>-->
+<!--                <a href="#">JavaScript</a>-->
+<!--                <a href="#">Vue</a>-->
+<!--                <a href="#">React</a>-->
+<!--                <a href="#">Node.js</a>-->
+<!--                <a href="#">Express</a>-->
+<!--                <a href="#">MongoDB</a>-->
+<!--                <a href="#">MySQL</a>-->
+            </div>
+        </div>
+        <div class="card">
+            <h3>链接友情</h3>
+            <div class="fakeimg"><p>Image</p></div>
+            <div class="fakeimg"><p>Image</p></div>
+            <div class="fakeimg"><p>Image</p></div>
+        </div>
+        <div class="card">
+            <h3>推荐特别</h3>
+            <p>Some text..</p>
+        </div>
+    </div>
+</div>
 </body>
+<script type="text/javascript">
+    const labelSumLimit  = 15
+    let tags = ["HTML", "CSS", "JavaScript", "Vue.js", "React", "Angular", "Bootstrap", "jQuery", "Node.js", "Express", "MongoDB", "MySQL", "Git", "GitHub", "Webpack", "Babel"];
+    let tagCloud = document.getElementById("tag-cloud");
+
+    let tagCount = Math.min(labelSumLimit, tags.length);
+    for (let i = 0; i < tagCount; i++) {
+        let tag = document.createElement("a");
+        tag.classList.add("tag");
+        tag.textContent = tags[i];
+        tag.style.backgroundColor = getRandomColor();
+        tagCloud.appendChild(tag);
+    }
+
+    if (tags.length > labelSumLimit) {
+        let more = document.createElement("a");
+        more.classList.add("tag");
+        more.textContent = "···";
+        more.style.backgroundColor = getRandomColor();
+        tagCloud.appendChild(more);
+    }
+
+    function getRandomColor() {
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
+
+
+    //     // 生成随机颜色
+    // function getRandomColor() {
+    //     const letters = '0123456789ABCDEF';
+    //     let color = '#';
+    //     for (let i = 0; i < 6; i++) {
+    //         color += letters[Math.floor(Math.random() * 16)];
+    //     }
+    //     return color;
+    // }
+    //
+    // // 获取所有标签元素
+    // const tags = document.querySelectorAll('.tag-cloud a');
+    //
+    // // 给每个标签设置随机背景颜色
+    // tags.forEach((tag) => {
+    //     tag.style.backgroundColor = getRandomColor();
+    // });
+</script>
 </html>

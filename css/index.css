@@ -1,0 +1,73 @@
+.banner{
+    background-image: url(../assets/bannerBG.jpg);
+    background-size: cover; /* 背景图片按比例缩放，保持元素完全填充 */
+    background-position: center center; /* 背景图片在元素中居中显示 */
+    background-repeat: no-repeat; /* 不重复显示背景图片 */
+    align-self: center;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.banner img{
+    width: 3%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+.banner .avatar{
+}
+.banner-line{
+    margin: 10px;
+    font-family: "楷体", KaiTi, serif;
+    font-size: x-large;
+}
+
+/* 为文章添加卡片效果 */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* 创建两个不相等的彼此并排的浮动列 */
+/* 左列 */
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+/* 右列 */
+.rightcolumn {
+    float: left;
+    width: 25%;
+    background-color: #f1f1f1;
+    padding-left: 20px;
+}
+
+#tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#tag-cloud a {
+    display: inline-block;
+    margin: 0;
+    padding: 5px;
+    border-radius: 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    flex-basis: 25%; /* 初始大小为标签云容器宽度的四分之一 */
+
+}
+
+#tag-cloud a:hover {
+    background-color: #333;
+    color: #fff;
+}
